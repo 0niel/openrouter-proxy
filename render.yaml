@@ -1,0 +1,12 @@
+services:
+  - type: web
+    name: openrouter-proxy
+    runtime: node
+    plan: free
+    region: frankfurt
+    buildCommand: node --check server.mjs
+    startCommand: npm start
+    healthCheckPath: /health
+    envVars:
+      - key: NODE_VERSION
+        value: 22
